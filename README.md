@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The project hosted at:
+[https://dictionary-app-4da4d.web.app/](https://dictionary-app-4da4d.web.app/)
+
 ## Available Scripts
 
 In the project directory, you can run:
