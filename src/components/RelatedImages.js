@@ -16,7 +16,6 @@ const RelatedImages = ({ searching, notFound, enteredWord }) => {
 
       const photosArray = res?.photos.map((photo) => photo.src.small);
       setPhotos(photosArray);
-      console.log('enteredWord changed');
     }, 500);
 
     return () => {
