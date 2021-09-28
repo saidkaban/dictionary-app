@@ -48,7 +48,7 @@ const LookUpForm = ({
 
   return (
     <form
-      className='flex flex-col m-4 p-4 mt-0 mb-12'
+      className='flex flex-col m-4 p-4 mt-0 mb-6'
       onSubmit={(event) => event.preventDefault()}
     >
       <label htmlFor='wordLookUp'>What word do you want to look up?</label>

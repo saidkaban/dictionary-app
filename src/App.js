@@ -8,10 +8,10 @@ const App = () => {
   const [enteredWord, setEnteredWord] = useState("hello");
   const [definition, setDefinition] = useState("");
   const [searching, setSearching] = useState(false);
-  const [notFound, setNotFound] = useState(false);  
+  const [notFound, setNotFound] = useState(false);
 
   return (
-    <div className='w-2/5 m-auto'>
+    <div className='w-5/12 m-auto'>
       <h1 className='text-6xl p-8'>Dictionary App</h1>
       <LookUpForm
         setDefinition={setDefinition}
@@ -26,7 +26,11 @@ const App = () => {
         notFound={notFound}
         enteredWord={enteredWord}
       />
-      <RelatedImages />
+      <RelatedImages
+        searching={searching}
+        notFound={notFound}
+        enteredWord={enteredWord}
+      />
     </div>
   );
 };
