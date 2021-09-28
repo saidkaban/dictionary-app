@@ -2,15 +2,13 @@ import React from "react";
 
 const PhoneticsBox = ({ link, text }) => {
   return (
-    <div className='flex mb-4 items-center'>
-      <a
-        href={link}
-        target='_blank'
-        rel='noreferrer'
-        className='border-2 rounded-2xl p-2 hover:bg-black hover:text-white hover:border'
-      >
-        Listen
-      </a>
+    <div className='flex mb-4 items-center justify-start'>
+      <div>
+        <audio controls>
+          <source src={link} type='audio/mpeg' />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
       <p className='ml-4'>{text}</p>
     </div>
   );

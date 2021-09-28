@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 let firstMount = true;
 
-const LookUpForm = ({ setDefinition, setSearching }) => {
-  const [enteredWord, setEnteredWord] = useState("hello");
-
+const LookUpForm = ({
+  setDefinition,
+  setSearching,
+  setNotFound,
+  enteredWord,
+  setEnteredWord,
+}) => {
   const inputChangeHandler = (event) => {
     setEnteredWord(event.target.value);
   };
@@ -26,15 +30,21 @@ const LookUpForm = ({ setDefinition, setSearching }) => {
         const res = await fetch(
           `https://api.dictionaryapi.dev/api/v2/entries/en/${enteredWord}`
         );
-        const data = await res.json();
-        setDefinition(data);
-        setSearching(false);
+        if (res.ok) {
+          const data = await res.json();
+          setDefinition(data);
+          setSearching(false);
+        } else {
+          setNotFound(true);
+          setSearching(false);
+        }
       }, 500);
     }
     return () => {
+      setNotFound(false);
       clearTimeout(identifier);
     };
-  }, [enteredWord, setDefinition, setSearching]);
+  }, [enteredWord, setDefinition, setSearching, setNotFound]);
 
   return (
     <form
