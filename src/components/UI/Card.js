@@ -1,7 +1,7 @@
 import React from "react";
 
 const Card = ({ children }) => {
-  return <div className='bg-white pb-4'>{children}</div>;
+  return <div className='bg-white'>{children}</div>;
 };
 
 export default Card;
